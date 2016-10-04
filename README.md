@@ -1,1 +1,1 @@
-# algo_one
+# Repository for course algorithm design analysis part one
