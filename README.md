@@ -1,1 +1,1 @@
-# Repository for course algorithm design analysis part one
+# Repository for course algorithm design and analysis part one
