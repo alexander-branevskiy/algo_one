@@ -88,18 +88,18 @@ def getDijkstraShortestPath(source):
 	used = [False] * totvertexes
 	weights = [2282281488] * totvertexes
 	weights[source] = 0
-	used[source] = True
 
 	pq = PriorityQueueSet()
 	pq.add(VertexWithPrior(0,source))
 
 	while pq.size() > 0:
 		_from = pq.pop_smallest().vertex
-		for to in range(0, totvertexes):
-			if not used[to] and adj[_from][to] > 0:
-				if adj[_from][to] + weights[_from] < weights[to]:
-					weights[to] = adj[_from][to] + weights[_from]
-					pq.add(VertexWithPrior(weights[to], to))
+		if not used[_from]:
+			for to in range(0, totvertexes):
+				if not used[to] and adj[_from][to] > 0:
+					if adj[_from][to] + weights[_from] < weights[to]:
+						weights[to] = adj[_from][to] + weights[_from]
+						pq.add(VertexWithPrior(weights[to], to))
 
 		used[_from] = True
 	return weights
