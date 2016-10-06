@@ -140,6 +140,3 @@ for i in lines:
 print ans%10000
 
 
-
-
-
